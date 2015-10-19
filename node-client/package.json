@@ -1,0 +1,17 @@
+{
+  "name": "arduino-gamepad-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "node-gamepad": "^0.1.14",
+    "queue": "^3.1.0",
+    "serialport": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}

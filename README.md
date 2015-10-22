@@ -51,9 +51,11 @@ The command could be longer, but then the arduino sketch would have to be change
 
 Adding events, such as button presses and joystick movements, can easily be done by adding additional blocks to `index.js` of the folloing form:
 
-    controller.on('dpadUp:press', function () {
-      addMessage('BNU:1')
-    })
+```JavaScript
+controller.on('dpadUp:press', function () {
+  addMessage('BNU:1')
+})
+```
 
 The events are composed of a button/joystick/status name and a state (fx. `press`). In the above example the `dpadUp` is the `name` and the `press` is the state.
 
@@ -68,23 +70,25 @@ The arduino sketch needs to recognize the events we are sending to it. Further w
 
 In the [arduino sketch](https://github.com/hanstdam/node-arduino-gamepad/blob/master/arduino-sketch/sketch/sketch.ino#L25-L28) each command needs to have a special case. A case for our example could look like this:
 
-    const int redLEDPin = 8;
-    void setup() {
-        ...
-        pinMode(redLEDPin, OUTPUT);
-    }
+```Arduino
+const int redLEDPin = 8;
+void setup() {
+    ...
+    pinMode(redLEDPin, OUTPUT);
+}
 
-    void loop() {
-    ...
-      else if(command == "BNU") {
-        if (value.toInt() === 1) {
-          digitalWrite(redLEDPin, HIGH);
-        } else {
-          digitalWrite(redLEDPin, LOW);
-        }
-      }
-    ...
+void loop() {
+...
+  else if(command == "BNU") {
+    if (value.toInt() === 1) {
+      digitalWrite(redLEDPin, HIGH);
+    } else {
+      digitalWrite(redLEDPin, LOW);
     }
+  }
+...
+}
+```
 
 The `command` is always the first 3 letters in upper case. The `value` is always a string with everything after the colon (`:`) in the message.
 

@@ -64,3 +64,8 @@ controller.on('dpadDown:press', function () {
 controller.on('dpadDown:release', function () {
   addMessage('BNY:0')
 })
+
+controller.on('left:move', function(move){
+  console.log('left move', move)
+  addMessage('LFX:' + move.x)
+})

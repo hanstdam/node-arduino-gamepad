@@ -27,6 +27,14 @@ Open the arduino sketch in the IDE, select the correct Board (fx. Uno) and seria
 
 ## Usage
 
+- Upload the arduino sketch to the arduino board.
+- Navigate to the `node-client` folder in your terminal.
+- Edit [line 5 in `index.js`](https://github.com/hanstdam/node-arduino-gamepad/blob/master/node-client/index.js#L5) to have the correct serial port name.
+- Run `npm install` to install the dependencies
+- Run `node .` to start the program. If it outputs `connected`, everything is ready. Maybe you need ask linux kindly by running `sudo node .`.
+
+## Extending
+
 ### The protocol
 
 The node program sends commands to the arduino with a simple protocol. The messages look something like this:
@@ -37,7 +45,7 @@ Where the first 3 letters are the "command" followed by a colon and a value.
 This makes it easy for the arduino to understand the command and the value.
 The command could be longer, but then the arduino sketch would have to be changed as well. Further, the less you send to the arduino, the faster the communication will happen.
 
-### Extending the number of events
+### Adding events
 
 #### Node.js program
 

@@ -4,7 +4,7 @@ This repository contains the arduino sketch and node.js code necessary for a con
 
 The communication happens over serial connection.
 
-The following will go through the installation process of each necessary part and how to use and manipulate the existing sample.
+The following will go through the installation process of each necessary parts and how to use and manipulate the existing sample.
 
 ## Install
 
@@ -33,7 +33,7 @@ Open the arduino sketch in the IDE, select the correct Board (fx. Uno) and seria
 - Run `npm install` to install the dependencies
 - Run `node .` to start the program. If it outputs `connected`, everything is ready. Maybe you need ask linux kindly by running `sudo node .`.
 
-## Extending
+## Extending the sample
 
 ### The protocol
 
